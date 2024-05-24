@@ -38,7 +38,7 @@ export default {
         };
 
         // Dispatching a mutation to add the new message
-        this.$store.commit("addMessage", newMessage);
+        this.$store.dispatch("messages/addMessage", newMessage);
 
         // Resetting the text input after sending the message
         this.text = "";
