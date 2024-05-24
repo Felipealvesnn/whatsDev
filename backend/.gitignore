@@ -1,0 +1,17 @@
+# Ignorar diretórios node_modules
+node_modules/
+
+# Ignorar arquivos de log
+logs/
+*.log
+
+# Ignorar arquivos de configuração de ambiente
+.env
+
+# Ignorar arquivos gerados na compilação/transpilação
+/dist
+/build
+
+# Ignorar arquivos de dependência do gerenciador de pacotes
+package-lock.json
+yarn.lock
