@@ -6,7 +6,7 @@
       informe o seu E-mail" bg-color="white" class="q-mb-md">
 
       </q-input>
-      <q-btn :ripple="false" rounded color="secondary" label="Acessar Chat" no-caps />
+      <q-btn :ripple="false" rounded color="secondary" @click="$router.push('/chat')" label="Acessar Chat" no-caps />
     </div>
     <q-separator vertical>
 
