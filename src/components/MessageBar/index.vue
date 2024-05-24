@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     sendMessage() {
-      console.log(this.$store.state.count)
+      console.log(this.$store)
       if (this.text !== "") {
         const newMessage = {
           id: Date.now(),  // Usando timestamp como id único
