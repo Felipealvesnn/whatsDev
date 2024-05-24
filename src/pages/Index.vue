@@ -6,19 +6,20 @@
       informe o seu E-mail" bg-color="White" class="q-mb-md">
 
       </q-input>
-      <q-btn :ripple="false" color="secondary" label="Acessar Chat" no-caps />
+      <q-btn :ripple="false" rounded color="secondary" label="Acessar Chat" no-caps />
     </div>
     <q-separator vertical>
 
 
     </q-separator>
+
     <div class="container justify-center image q-pa-xl">
       <h5>Registre-se</h5>
-      <q-input rounded outlined v-model="nome" label="Informe o seu nome" bg-color="White" class="q-mb-md"/>
+      <q-input rounded outlined v-model="nome" label="Informe o seu nome" bg-color="White" class="q-mb-md" />
 
       <q-input rounded outlined v-model="emailSignUp" label="Informe o seu E-mail" bg-color="White" class="q-mb-md" />
 
-      <q-btn :ripple="false"  color="secondary" label="Registrar" no-caps />
+      <q-btn :ripple="false" rounded color="secondary" label="Registrar" no-caps />
     </div>
 
   </q-page>
@@ -38,6 +39,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.image {
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100%
+}
 .container {
   display: flex;
   align-items: center;

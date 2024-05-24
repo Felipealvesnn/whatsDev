@@ -13,7 +13,7 @@
 
 
 export default {
-  name: 'MainLayout',
+  name: 'MainLayoutDiferente',
 
   data () {
     return {
