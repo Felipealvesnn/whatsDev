@@ -3,7 +3,7 @@
     <div class="container  justify-center image q-pa-xl ">
       <h5>Acesse o chat</h5>
       <q-input rounded outlined v-model="email" label="
-      informe o seu E-mail" bg-color="White" class="q-mb-md">
+      informe o seu E-mail" bg-color="white" class="q-mb-md">
 
       </q-input>
       <q-btn :ripple="false" rounded color="secondary" label="Acessar Chat" no-caps />
@@ -15,9 +15,9 @@
 
     <div class="container justify-center image q-pa-xl">
       <h5>Registre-se</h5>
-      <q-input rounded outlined v-model="nome" label="Informe o seu nome" bg-color="White" class="q-mb-md" />
+      <q-input rounded outlined v-model="nome" label="Informe o seu nome" bg-color="white" class="q-mb-md" />
 
-      <q-input rounded outlined v-model="emailSignUp" label="Informe o seu E-mail" bg-color="White" class="q-mb-md" />
+      <q-input rounded outlined v-model="emailSignUp" label="Informe o seu E-mail" bg-color="white" class="q-mb-md" />
 
       <q-btn :ripple="false" rounded color="secondary" label="Registrar" no-caps />
     </div>

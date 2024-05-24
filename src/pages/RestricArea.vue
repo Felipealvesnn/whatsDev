@@ -4,7 +4,11 @@
     <div>
       <ConverastionArea />
     </div>
-    <div class="column" v-if="1 == 2">
+    <div class="column" v-if="1 == 1">
+      <TopBar title="Pessoa" />
+      <ChatArea />
+      <MessageBar />
+
     </div>
     <empty v-else />
 
@@ -14,6 +18,9 @@
 <script>
 import Empty from 'src/components/Empty/Index.vue'
 import ConverastionArea from 'src/components/ConverastionArea/ConverastionArea.vue'
+import TopBar from 'src/components/TopBar/index.vue'
+import ChatArea from 'src/components/ChatArea/index.vue'
+import MessageBar from 'src/components/MessageBar/index.vue'
 
 
 
@@ -27,7 +34,10 @@ export default {
   },
   components: {
     Empty,
-    ConverastionArea
+    ChatArea,
+    ConverastionArea,
+    TopBar,
+    MessageBar
   }
 }
 </script>
