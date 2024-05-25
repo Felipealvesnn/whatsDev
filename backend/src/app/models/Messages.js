@@ -1,23 +1,23 @@
-const Sequelize = require('sequelize')
-const { Model } = require('sequelize')
+const { Model, DataTypes } = require('sequelize');
 
 class Message extends Model {
     static init(sequelize) {
-        super.init(
+        return super.init(
             {
-                text: Sequelize.STRING,
-                user_destination: Sequelize.INTEGER,
-                user_id: Sequelize.INTEGER
+                text: DataTypes.STRING,
+                user_destination: DataTypes.INTEGER,
+                user_id: DataTypes.INTEGER,
             },
             {
-                sequelize
+                sequelize,
+                modelName: 'Message',
+                tableName: 'messages', // opcional, para definir o nome da tabela explicitamente
             }
         );
-        return this;
     }
 
     static associate(models) {
-        this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' })
+        this.belongsTo(models.User, { foreignKey: 'user_id', as: 'user' });
     }
 }
 

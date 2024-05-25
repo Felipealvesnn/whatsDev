@@ -1,20 +1,23 @@
-const Sequelize = require('sequelize')
-const { Model } = require('sequelize')
+const { Model, DataTypes } = require('sequelize');
 
 class User extends Model {
     static init(sequelize) {
-        super.init(
+        return super.init(
             {
-                name: Sequelize.STRING,
-                email: Sequelize.STRING
+                name: DataTypes.STRING,
+                email: DataTypes.STRING,
             },
             {
-                sequelize
+                sequelize,
+                modelName: 'User',
+                tableName: 'users', // opcional, para definir o nome da tabela explicitamente
             }
         );
-
-        return this;
     }
 
+    static associate(models) {
+        this.hasMany(models.Message, { foreignKey: 'user_id', as: 'messages' });
+    }
 }
-module.exports = User
+
+module.exports = User;
