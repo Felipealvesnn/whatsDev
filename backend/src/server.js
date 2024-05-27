@@ -1,11 +1,14 @@
-const routes = require('./routers');
 const express = require('express');
-const app = express();
-const socketIO = require('socket.io');
 const http = require('http');
+const socketIO = require('socket.io');
 const cors = require('cors');
+const routes = require('./routers');
 const Database = require('./database/index');
+const { getInstagramData } = require('./services/instagram');
 
+getInstagramData();
+
+const app = express();
 
 app.use(cors());
 app.use(express.json());
@@ -18,11 +21,17 @@ const io = socketIO(server, {
     }
 });
 
+io.on('connection', (socket) => {
+    console.log(`Socket conectado: ${socket.id}`);
+});
+
 app.request.io = io;
 
-app.listen(3333);
 
+
+
+server.listen(3333, () => {
+    console.log('Server running on port 3333');
+});
 
 Database.init();
-
-console.log('Server running on port 3333');

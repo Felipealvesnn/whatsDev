@@ -6,11 +6,12 @@ class User extends Model {
             {
                 name: DataTypes.STRING,
                 email: DataTypes.STRING,
+
             },
             {
                 sequelize,
-                modelName: 'User',
-                tableName: 'users', // opcional, para definir o nome da tabela explicitamente
+                underscored: true,
+                tableName: 'Users', // opcional, para definir o nome da tabela explicitamente
             }
         );
     }

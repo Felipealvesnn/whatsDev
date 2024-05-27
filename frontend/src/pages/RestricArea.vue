@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import socket  from 'src/services/socket'
+
 import Empty from 'src/components/Empty/Index.vue'
 import ConverastionArea from 'src/components/ConverastionArea/ConverastionArea.vue'
 import TopBar from 'src/components/TopBar/index.vue'
@@ -29,7 +31,8 @@ export default {
 
   data() {
     return {
-
+      users:[],
+      newMessage: ''
     }
   },
   components: {
@@ -38,7 +41,25 @@ export default {
     ConverastionArea,
     TopBar,
     MessageBar
-  }
+  },
+  
+  mounted() {
+    this.getUsers();
+  },
+  created() {
+    const receiver = localStorage.getItem("receiver");
+    socket.on(receiver, message => {
+      const arr = [];
+      this.users.forEach(item => {
+        if (item.id === message.user_id) {
+          item.newMessage = true;
+        }
+        arr.push(item);
+      });
+      this.newMessages = message.id;
+      this.users = arr;
+    });
+  },
 }
 </script>
 
